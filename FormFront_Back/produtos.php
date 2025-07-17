@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style_produto.css"> </script>
 </head>
 <body>
-    <form action="#" id="formulario" onsubmit="return valida()" method="post">
+    <form method="post" action="backendform.php" id="formulario" onsubmit="return valida()"  >
         <!--DADOS PESSOAIS-->
         <fieldset>
             <div>
@@ -95,7 +95,7 @@
 
             <tr>
                 <td class="botao">
-                    <input class="btn1" type="submit" onclick="return validar" value="Enviar">
+                    <input class="btn1" type="submit" value="Enviar" >
                     <input class="btn2" type="button" value="Cancelar">
                 </td>
             </tr>
