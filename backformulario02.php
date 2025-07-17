@@ -7,19 +7,12 @@
 </head>
 <body>
     <?php
+        if (isset($_GET['nome']) && isset($_GET['idade']))
+        {
+            echo "Recebendo o cliente ".$_GET['nome'];
+            echo "Que tem ".$_GET['idade']." Anos";
+        } 
 
-    $i = 1;
-    $t = 1;
-
-    while ($t <= 10) {
-        $resultado = $i * $t;
-        echo " $i X $t = $resultado<br>";
-        $t++;
-        while (){
-
-        
-        }
-    } 
-    ?>
+        ?>
 </body>
 </html>

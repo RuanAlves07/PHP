@@ -6,20 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-
-    $i = 1;
-    $t = 1;
-
-    while ($t <= 10) {
-        $resultado = $i * $t;
-        echo " $i X $t = $resultado<br>";
-        $t++;
-        while (){
-
-        
-        }
-    } 
-    ?>
+    <div class="menu">
+        <?php include("menu.php"); ?>
+    </div>
+    <h1>Bem Vindo a Página</h1>
+    <p>Um menu aqui</p>
 </body>
 </html>
