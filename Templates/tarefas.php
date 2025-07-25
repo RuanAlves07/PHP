@@ -1,8 +1,9 @@
 <?php
     session_start();
+    include "banco.php";
 
     if (isset($_GET['nome']) && $_GET['nome'] != '') {
-        // Declarando uma array chamada 'tarefa'
+        
         $tarefa = array();
 
         $tarefa['nome'] = $_GET['nome'];
@@ -30,11 +31,10 @@
         $_SESSION['lista_tarefas'][] = $tarefa;
     }
 
-    if (array_key_exists('lista_tarefas', $_SESSION)) {
-        $lista_tarefas = $_SESSION['lista_tarefas'];
-    } else {
-        $lista_tarefas = [];
-    }
+        $lista_tarefas = buscar_tarefas($conexao);
+        
+
+    
 
     include "template.php"
 
