@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Cadastro de Cliente</h2>
-    <form action="processarInsercao.php" method="POST">
+    <form action="ProcessarInsercao.php" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 

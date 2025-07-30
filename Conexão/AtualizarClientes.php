@@ -10,10 +10,7 @@
 
 function buscarClientePorid($idCliente, $conexao) { 
     $stmt = $conexao->prepare ("
-        SELECT id_cliente, nome, endereco, telefone, email
-        FROM cliente
-        WHERE id_cliente = :id
-    ");
+        SELECT id_cliente, nome, endereco, telefone, email FROM cliente WHERE id_cliente = :id");
     $stmt->bindParam(":id", $idCliente, PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetch();

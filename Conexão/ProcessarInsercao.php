@@ -1,14 +1,13 @@
 <?php 
     require_once 'conexao.php';
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if ($_SERVER["REQUEST_METHOD"] == "GET"){
         $conexao = conectarBanco();
 
-        $sql = "INSERT INTO cliente (nome, endereço, telefone, email)
-                                        VALUES (:nome, :endereço, :telefone, :email)";
+        $sql = "INSERT INTO cliente (nome, endereco, telefone, email) VALUES (:nome, :endereco, :telefone, :email)";
     
         $stmt = $conexao -> prepare($sql);
         $stmt -> bindParam(":nome", $_POST["nome"]);
-        $stmt -> bindParam(":endereço", $_POST["endereço"]);
+        $stmt -> bindParam(":endereco", $_POST["endereco"]);
         $stmt -> bindParam(":telefone", $_POST["telefone"]);
         $stmt -> bindParam(":email", $_POST["email"]);
         try{
