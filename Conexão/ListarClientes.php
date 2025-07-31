@@ -29,7 +29,7 @@ $clientes = $stmt -> fetchAll();
             <tr>
                 <td><?= htmlspecialchars($cliente["id_cliente"]) ?></td>
                 <td><?= htmlspecialchars($cliente["nome"]) ?></td>
-                <td><?= htmlspecialchars($cliente["endereço"]) ?></td>
+                <td><?= htmlspecialchars($cliente["endereco"]) ?></td>
                 <td><?= htmlspecialchars($cliente["telefone"]) ?></td>
                 <td><?= htmlspecialchars($cliente["email"]) ?></td>
             </tr>

@@ -20,6 +20,39 @@
         $stmt = $conexao ->prepare("SELECT id_cliente, nome, endereco, telefone, email FROM cliente WHERE id_cliente = :id");
         $stmt-> bindParam(":id", $busca, PDO::PARAM_INT);
     } else {
-        
+        $stmt = $conexao -> prepare("SELECT id_cliente, nome, endereco, telefone, email FROM cliente WHERE nome LIKE :nome");
+        $buscaNome = "%$busca%";
+        $stmt->bindParam(":nome",$buscaNome, PDO::PARAM_INT);
     }
+    $stmt->execute();
+    $clientes = $stmt->fetchAll();
+
+    if (!$clientes) {
+        die ("Erro: nenhum cliente encontrado.");
+    }
+?>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Ação</th>
+    </tr>
+    <?php foreach ($clientes as $cliente): ?>
+            <tr>
+                <td><?= htmlspecialchars($cliente["id_cliente"]) ?></td>
+                <td><?= htmlspecialchars($cliente["nome"]) ?></td>
+                <td><?= htmlspecialchars($cliente["endereco"]) ?></td>
+                <td><?= htmlspecialchars($cliente["telefone"]) ?></td>
+                <td><?= htmlspecialchars($cliente["email"]) ?></td>
+                <td><a href="AtualizarClientes.php?id=<?=$cliente['id_cliente']?>">Editar</a></td>
+            </tr>
+<?php endforeach; ?>
+</table>
+
+
+
+
     
