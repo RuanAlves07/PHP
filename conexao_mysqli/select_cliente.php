@@ -19,7 +19,7 @@ $conexao->close();
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="front.php">HOME</a>
+        <a class="navbar-brand" href="index.php">HOME</a>
     </div>
 </nav>
 
