@@ -2,7 +2,7 @@
 
 $nomeservidor = "localhost";
 $usuario = "root";
-$senha = "123";
+$senha = "";
 $bancodedados = "empresa";
 
 $conn = mysqli_connect($nomeservidor, $usuario, $senha, $bancodedados);
