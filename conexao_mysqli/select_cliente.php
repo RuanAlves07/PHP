@@ -17,28 +17,19 @@ $conexao->close();
 </head>
 <body>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container"> 
-        <a class="navbar-brand" href="index.php">HOME</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                        Navegar
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="insert_cliente.php">Inserir Cliente</a></li>
-                        <li><a class="dropdown-item" href="select_cliente.php">Listar Cliente</a></li>
-                        <li><a class="dropdown-item" href="update_cliente.php">Atualizar Cliente</a></li>
-                        <li><a class="dropdown-item" href="delete_cliente.php">Deletar Cliente</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="back/cadastro.php">Cadastro (Back)</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="container">
+            <a class="navbar-brand" href="index.php">Sistema</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.php"> Início</a>    
+                <a class="nav-link" href="insert_cliente.php"> Registrar Cliente</a>
+                <a class="nav-link" href="select_cliente.php"> Listar Clientes</a>
+                <a class="nav-link" href="delete_cliente.php"> Excluir Cliente</a>
+                <a class="nav-link" href="update_cliente.php"> Atualizar Cliente</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
