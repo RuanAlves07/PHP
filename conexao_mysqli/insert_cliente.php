@@ -79,9 +79,9 @@ session_start();
         $stmt->bind_param("ssss", $nome, $endereco, $telefone, $email);
 
         if ($stmt->execute()) {
-            echo "<div class='alert alert-success mt-3'>Cliente adicionado com sucesso!</div>";
+            echo "Cliente adicionado com sucesso!";
         } else {
-            echo "<div class='alert alert-danger mt-3'>Erro ao adicionar cliente: " . $stmt->error . "</div>";
+            echo "Erro ao adicionar cliente: " . $stmt->error;
         }
 
         // Fecha declaração e conexão

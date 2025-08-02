@@ -30,9 +30,9 @@ if (isset($_POST['atualizar'])) {
     $stmt->bind_param("ssssi", $nome, $endereco, $telefone, $email, $id_cliente);
 
     if ($stmt->execute()) {
-        echo "<div class='alert alert-success'>Cliente atualizado com sucesso!</div>";
+        echo "Cliente atualizado com sucesso!";
     } else {
-        echo "<div class='alert alert-danger'>Erro: " . $stmt->error . "</div>";
+        echo "Erro ao atualizar cliente: " . $stmt->error;
     }
     $stmt->close();
 }

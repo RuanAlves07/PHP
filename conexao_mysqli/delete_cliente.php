@@ -12,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("i", $id_cliente);
 
     if ($stmt->execute()) {
-        if ($stmt->affected_rows > 0) {
-            $mensagem = "<div class='alert alert-success'>Cliente deletado com sucesso!</div>";
+        if ($stmt->execute()) {
+            echo "Cliente deletado com sucesso!";
         } else {
-            $mensagem = "<div class='alert alert-warning'>Cliente com ID $id_cliente não encontrado.</div>";
+            echo "Erro ao deletar cliente: " . $stmt->error;
         }
     } else {
         $mensagem = "<div class='alert alert-danger'>Erro: " . $stmt->error . "</div>";
