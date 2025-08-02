@@ -17,7 +17,6 @@ $conexao->close();
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="index.php">Sistema</a>
@@ -31,7 +30,6 @@ $conexao->close();
         </div>
     </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <div class="container mt-5">
     <h2 class="text-center">Clientes Cadastrados</h2>
@@ -66,5 +64,6 @@ $conexao->close();
     <?php endif; ?>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

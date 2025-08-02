@@ -1,12 +1,13 @@
 <?php
 session_start();
+
 require_once 'conexao.php';
 
 $conexao = conectadb();
 $cliente = null;
 $id_cliente = null;
 
-// Buscar cliente pelo ID
+
 if (isset($_POST['buscar'])) {
     $id_cliente = intval($_POST['id_cliente']);
     $stmt = $conexao->prepare("SELECT * FROM cliente WHERE id_cliente = ?");
@@ -17,7 +18,7 @@ if (isset($_POST['buscar'])) {
     $stmt->close();
 }
 
-// Atualizar cliente
+
 if (isset($_POST['atualizar'])) {
     $id_cliente = $_POST['id_cliente'];
     $nome = $_POST['nome'];
