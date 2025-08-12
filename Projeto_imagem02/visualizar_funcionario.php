@@ -33,10 +33,13 @@ try {
 
                 header("Location: consulta_funcionario.php");
                 exit();
-            }
-        }
+            }else {
+                echo "Funcionario Não encontrado.";
+        } else {
+            echo "ID do funcionario não foi fornecida.";
     } 
-} ?>
+} catch(PDOException $e) {
+    echo "Erro: ". $e->getMessage(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,9 +48,16 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizador de funcionarios</title>
 </head>
-<body>
+    <body>
             <h1>Dados dos funcionarios</h1>
             <p>Nome: <?=htmlspecialchars($funcionario['nome'])?></p>
-</body>
+            <p>Telefone: <?=htmlspecialchars($funcionario['telefone'])?></p>
+            <p>Foto: </p>
+            <img src="data:<?=funcionario['tipo_foto']?>;base64,<?=base_encode($funcionario['foto'])?>" alt="Foto do Funcionario">
+            <form method="POST">
+                <input type="hidden" name="excluir_id" value="<?= $id?>">
+                <button type="submit">Excluir funcionario</button>
+            </form>
+    </body>
 </html>
 
