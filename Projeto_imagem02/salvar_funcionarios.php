@@ -60,7 +60,7 @@
                 $nome = $_POST['nome'];
                 $telefone = $_POST['telefone'];
                 $imagem = $_FILES['foto']['name']; // PEGA O NOME ORIGINAL DO ARQUIVO
-                $tipo_imagem = $_POST['foto']['type'];  // PEGA O TIPO mime DA IMAGEM
+                $tipo_foto = $_POST['foto']['type'];  // PEGA O TIPO mime DA IMAGEM
 
                 // REDIMENSIONA A IMAGEM
                 // O CODIGO ABAIXO CUJA VARIAVEL É tpm_name É O CAMINHO TEMPORARIO DO ARQUIVO 
@@ -103,3 +103,8 @@
 
 </body>
 </html>
+
+<!--Warning: Undefined array key "foto" in C:\xampp\htdocs\PHP\Projeto_imagem02\salvar_funcionarios.php on line 63
+
+Warning: Trying to access array offset on value of type null in C:\xampp\htdocs\PHP\Projeto_imagem02\salvar_funcionarios.php on line 63
+Erro. SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected-->

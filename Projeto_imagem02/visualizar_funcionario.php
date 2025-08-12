@@ -12,7 +12,7 @@ try {
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        // Busca os dados do funcionário
+        
         $sql = "SELECT nome, telefone, tipo_foto, foto FROM funcionarios WHERE id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -21,7 +21,7 @@ try {
         if ($stmt->rowCount() > 0) {
             $funcionario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Verifica se o formulário foi enviado para exclusão
+            
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['excluir_id'])) {
                 $excluir_id = $_POST['excluir_id'];
 
@@ -30,7 +30,7 @@ try {
                 $stmt_excluir->bindParam(':id', $excluir_id, PDO::PARAM_INT);
                 $stmt_excluir->execute();
 
-                // Redireciona após exclusão
+                
                 header("Location: consulta_funcionario.php");
                 exit();
             }
@@ -60,17 +60,13 @@ try {
     <p><strong>Nome:</strong> <?= htmlspecialchars($funcionario['nome']) ?></p>
     <p><strong>Telefone:</strong> <?= htmlspecialchars($funcionario['telefone']) ?></p>
     <p><strong>Foto:</strong></p>
-    <img src="data:<?= $funcionario['tipo_foto'] ?>;base64,<?= base64_encode($funcionario['foto']) ?>" 
-         alt="Foto do Funcionário" 
-         style="max-width: 200px; border-radius: 8px;">
+    <img src="data:<?= $funcionario['tipo_foto'] ?>;base64,<?= base64_encode($funcionario['foto']) ?>" alt="Foto do Funcionário";>
     
-    <form method="POST" style="margin-top: 20px;">
+    <form method="POST">
         <input type="hidden" name="excluir_id" value="<?= $id ?>">
-        <button type="submit" style="background-color: red; color: white; border: none; padding: 10px; cursor: pointer;">
+        <button type="submit">
             Excluir Funcionário
         </button>
     </form>
-
-    <a href="consulta_funcionario.php" style="display: inline-block; margin-top: 10px;">Voltar</a>
 </body>
 </html>

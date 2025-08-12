@@ -11,7 +11,7 @@
         <h1>Cadastro</h1>
         <h2>funcionario</h2>
         <!-- Formulario para Cadastro de Funcionarios -->
-        <form action="cadastro_funcionario.php" method="POST" enctype="multipart/form-data">
+        <form action="salvar_funcionarios.php" method="POST" enctype="multipart/form-data">
             <label for="name">Nome: </label>
             <input type="text" id="nome" name="nome" required>
             <br>
